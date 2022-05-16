@@ -1,0 +1,26 @@
+external:
+      url:
+            bookCover: http://covers.openlibrary.org/b/id/
+
+spring:
+      data:
+            cassandra:
+                  keyspace-name: main
+                  contact-points: 127.0.0.1
+                  port: 9042
+                  local-datacenter: datacenter1
+                  schema-action: CREATE_IF_NOT_EXISTS
+            request:
+                  timeout: 10s
+            connect:
+                  timeout: 10s
+                  init-query-timeout: 10s
+      security:
+            oauth2:
+                  client:
+                        registration:
+                              github:
+                                    client-id: Iv1.533b46c236e19eab
+                                    client-secret: f74824d094e637189885efd968bad9421db00d31
+      thymeleaf:
+            prefix: classpath:/templates/
