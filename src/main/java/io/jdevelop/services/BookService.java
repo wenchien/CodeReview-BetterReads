@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import io.jdevelop.DTO.Book;
+import io.jdevelop.beans.Book;
 import io.jdevelop.repository.BookRepository;
 
 @Service

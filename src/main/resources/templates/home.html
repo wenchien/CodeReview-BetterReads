@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Better Reads Login</title>
+    <title>Better Reads User Dashboard</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width" />
     <base href="/" />
@@ -11,10 +11,24 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Login</h1>
+    <h1>Better Reads User Dashboard</h1>
       <div th:insert="components/book-search :: search-panel"></div>
-    <div>
-      With GitHub: <a href="/oauth2/authorization/github">click here</a>
+
+    <div th:each="result: ${booksByUser}">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="..." class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title" th:text="booksByUser.bookName">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 

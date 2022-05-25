@@ -2,6 +2,7 @@ package io.jdevelop.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
+import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.repository.config.EnableCassandraRepositories;
 
 import lombok.extern.slf4j.Slf4j;
@@ -17,9 +18,14 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
     }
 
     @Override
+    public SchemaAction getSchemaAction() {
+      return SchemaAction.CREATE_IF_NOT_EXISTS;
+    }
+
+    @Override
     public String[] getEntityBasePackages() {
         log.debug("getEntityBasePackages");
-		return new String[] {"io.jdevelop.DTO"};
+		return new String[] {"io.jdevelop.beans"};
 	}
 
 }

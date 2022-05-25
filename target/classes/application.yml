@@ -5,11 +5,11 @@ external:
 spring:
       data:
             cassandra:
-                  keyspace-name: main
+                  keyspaceName: main
                   contact-points: 127.0.0.1
                   port: 9042
                   local-datacenter: datacenter1
-                  schema-action: CREATE_IF_NOT_EXISTS
+                  schemaAction: CREATE_IF_NOT_EXISTS
             request:
                   timeout: 10s
             connect:
